@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Android3Lesson2Dz</string>
+    <string name="text">text</string>
+    <string name="name">Name</string>
+    <string name="status">Status</string>
+    <string name="gender">Gender</string>
+    <string name="created">Created</string>
+    <string name="episode">Episode</string>
+    <string name="air_data">Air Data</string>
+    <string name="type">Type</string>
+    <string name="dimension">Dimension</string>
+    <string name="character">Character</string>
+    <string name="location">Location</string>
+</resources>
