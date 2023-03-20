@@ -30,7 +30,7 @@ class CharacterRepository {
         return data
     }
 
-    fun fetchDetailCharacters(id : Int): MutableLiveData<CharacterModel> {
+    fun fetchDetailCharacters(id: Int): MutableLiveData<CharacterModel> {
         val data: MutableLiveData<CharacterModel> = MutableLiveData()
         App.characterApiServices?.fetchDetailCharacters(id)
             ?.enqueue(object : retrofit2.Callback<CharacterModel> {
@@ -50,5 +50,4 @@ class CharacterRepository {
             })
         return data
     }
-
 }

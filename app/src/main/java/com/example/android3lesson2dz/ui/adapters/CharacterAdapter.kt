@@ -21,8 +21,7 @@ class CharacterAdapter(val onItemClick: (id: Int) -> Unit) :
 
     inner class CharacterViewHolder(
         private val binding: ItemCharacterBinding,
-    ) :
-        RecyclerView.ViewHolder(binding.root) {
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         init {
             itemView.setOnClickListener {

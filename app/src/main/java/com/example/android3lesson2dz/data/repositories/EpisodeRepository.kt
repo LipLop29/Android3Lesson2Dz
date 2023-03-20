@@ -31,7 +31,7 @@ class EpisodeRepository {
         return data
     }
 
-    fun fetchDetailEpisode(id : Int): MutableLiveData<EpisodeModel> {
+    fun fetchDetailEpisode(id: Int): MutableLiveData<EpisodeModel> {
         val data: MutableLiveData<EpisodeModel> = MutableLiveData()
         App.episodeApiService?.fetchDetailEpisode(id)
             ?.enqueue(object : Callback<EpisodeModel> {

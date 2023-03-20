@@ -31,7 +31,7 @@ class LocationRepository {
         return data
     }
 
-    fun fetchDetailLocation(id : Int): MutableLiveData<LocationModel> {
+    fun fetchDetailLocation(id: Int): MutableLiveData<LocationModel> {
         val data: MutableLiveData<LocationModel> = MutableLiveData()
         App.locationApiService?.fetchDetailLocation(id)
             ?.enqueue(object : Callback<LocationModel> {

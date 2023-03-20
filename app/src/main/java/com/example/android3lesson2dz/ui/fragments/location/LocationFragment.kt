@@ -29,6 +29,7 @@ class LocationFragment :
             locationAdapter.setList(it.results)
         }
     }
+
     private fun onItemClick(id:Int) {
         val action: NavDirections =
             LocationFragmentDirections.actionLocationFragmentToLocationDetailFragment(id)

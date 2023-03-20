@@ -7,7 +7,7 @@ import com.example.android3lesson2dz.R
 import com.example.android3lesson2dz.base.BaseFragment
 import com.example.android3lesson2dz.databinding.FragmentEpisodeDetailBinding
 
-class   EpisodeDetailFragment :
+class EpisodeDetailFragment :
     BaseFragment<FragmentEpisodeDetailBinding, EpisodeViewModel>(R.layout.fragment_episode_detail) {
 
     override val binding by viewBinding(FragmentEpisodeDetailBinding::bind)

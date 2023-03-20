@@ -20,6 +20,7 @@ class EpisodeAdapter(val onItemClick: (id: Int) -> Unit) :
 
     inner class EpisodeViewHolder(private val binding: ItemEpisodeBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
         init {
             itemView.setOnClickListener {
                 onItemClick(list[adapterPosition].id)
