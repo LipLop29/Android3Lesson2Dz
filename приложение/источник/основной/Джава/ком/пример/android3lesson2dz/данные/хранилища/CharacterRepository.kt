@@ -50,5 +50,4 @@ class CharacterRepository {
             })
         return data
     }
-
 }
