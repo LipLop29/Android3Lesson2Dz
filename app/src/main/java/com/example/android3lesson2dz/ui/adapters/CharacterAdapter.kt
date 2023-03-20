@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.example.android3lesson2dz.databinding.ItemCharacterBinding
 import com.example.android3lesson2dz.models.CharacterModel
 
-class CharacterAdapter :
+class CharacterAdapter(val onItemClick: (id: Int) -> Unit) :
     RecyclerView.Adapter<CharacterAdapter.CharacterViewHolder>() {
 
     private var list: List<CharacterModel> = ArrayList()
@@ -19,18 +19,27 @@ class CharacterAdapter :
         notifyDataSetChanged()
     }
 
-    class CharacterViewHolder(private val binding: ItemCharacterBinding) :
+    inner class CharacterViewHolder(
+        private val binding: ItemCharacterBinding,
+    ) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            itemView.setOnClickListener {
+                onItemClick(list[adapterPosition].id)
+            }
+        }
+
         fun onBind(characterModel: CharacterModel) {
-            binding.itemCharacterName.text = characterModel.name
-            binding.tvGender.text = characterModel.gender
-            binding.tvStatus.text = characterModel.status
+            binding.tvCharacterName.text = characterModel.name
+            binding.tvCharacterGender.text = characterModel.gender
+            binding.tvCharacterStatus.text = characterModel.status
 
             val logoPath = characterModel.image
             Glide
-                .with(binding.imgPerson.context)
+                .with(binding.imgCharacterPerson.context)
                 .load(logoPath)
-                .into(binding.imgPerson)
+                .into(binding.imgCharacterPerson)
         }
     }
 

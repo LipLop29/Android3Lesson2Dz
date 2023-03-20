@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android3lesson2dz.databinding.ItemEpisodeBinding
 import com.example.android3lesson2dz.models.EpisodeModel
 
-class EpisodeAdapter :
+class EpisodeAdapter(val onItemClick: (id: Int) -> Unit) :
     RecyclerView.Adapter<EpisodeAdapter.EpisodeViewHolder>() {
 
     private var list: List<EpisodeModel> = ArrayList()
@@ -18,13 +18,19 @@ class EpisodeAdapter :
         notifyDataSetChanged()
     }
 
-    class EpisodeViewHolder(private val binding: ItemEpisodeBinding) :
+    inner class EpisodeViewHolder(private val binding: ItemEpisodeBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        init {
+            itemView.setOnClickListener {
+                onItemClick(list[adapterPosition].id)
+            }
+        }
+
         fun onBind(episodeModel: EpisodeModel) = with(binding) {
-            tvCreated.text = episodeModel.created
-            tvEpisode.text = episodeModel.episode
-            tvName.text = episodeModel.name
-            tvAirDate.text = episodeModel.air_date
+            tvEpisodeCreated.text = episodeModel.created
+            tvEpisodeEpisode.text = episodeModel.episode
+            tvEpisodeName.text = episodeModel.name
+            tvEpisodeAirDate.text = episodeModel.air_date
         }
     }
 

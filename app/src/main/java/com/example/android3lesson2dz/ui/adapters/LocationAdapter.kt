@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android3lesson2dz.databinding.ItemLocationBinding
 import com.example.android3lesson2dz.models.LocationModel
 
-class LocationAdapter :
+class LocationAdapter(val onItemClick: (id: Int) -> Unit) :
     RecyclerView.Adapter<LocationAdapter.LocationViewHolder>() {
 
     private var list: List<LocationModel> = ArrayList()
@@ -20,11 +20,18 @@ class LocationAdapter :
 
     inner class LocationViewHolder(private val binding: ItemLocationBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            itemView.setOnClickListener {
+                onItemClick(list[adapterPosition].id)
+            }
+        }
+
         fun onBind(locationModel: LocationModel) = with(binding) {
-            tvType.text = locationModel.type
-            tvName.text = locationModel.name
-            tvDimension.text = locationModel.dimension
-            tvCreated.text = locationModel.created
+            tvLocationType.text = locationModel.type
+            tvLocationName.text = locationModel.name
+            tvLocationDimension.text = locationModel.dimension
+            tvLocationCreated.text = locationModel.created
         }
     }
 

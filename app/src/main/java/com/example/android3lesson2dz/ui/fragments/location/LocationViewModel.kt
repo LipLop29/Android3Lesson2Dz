@@ -2,36 +2,19 @@ package com.example.android3lesson2dz.ui.fragments.location
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.android3lesson2dz.App
+import com.example.android3lesson2dz.data.repositories.LocationRepository
 import com.example.android3lesson2dz.models.LocationModel
 import com.example.android3lesson2dz.models.RickAndMortyResponse
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class LocationViewModel : ViewModel() {
 
+    private val locationRepository = LocationRepository()
+
     fun fetchLocation(): MutableLiveData<RickAndMortyResponse<LocationModel>> {
+        return locationRepository.fetchLocation()
+    }
 
-        val data: MutableLiveData<RickAndMortyResponse<LocationModel>> = MutableLiveData()
-
-        App.locationApiService?.fetchLocations()
-            ?.enqueue(object : Callback<RickAndMortyResponse<LocationModel>> {
-
-                override fun onResponse(
-                    call: Call<RickAndMortyResponse<LocationModel>>,
-                    response: Response<RickAndMortyResponse<LocationModel>>
-                ) {
-                    data.value = response.body()
-                }
-
-                override fun onFailure(
-                    call: Call<RickAndMortyResponse<LocationModel>>,
-                    t: Throwable
-                ) {
-                    data.value = null
-                }
-            })
-        return data
+    fun fetchDetailLocation(id: Int): MutableLiveData<LocationModel> {
+        return locationRepository.fetchDetailLocation(id)
     }
 }
