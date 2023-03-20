@@ -15,6 +15,6 @@ class CharacterViewModel : ViewModel() {
     }
 
     fun fetchDetailCharacters(id: Int): MutableLiveData<CharacterModel> {
-        return characterRepository.fetchDetailCharacters(id)
+        return characterRepository.fetchDetailCharacter(id)
     }
 }
