@@ -7,7 +7,7 @@
     android:background="@drawable/rounder">
 
     <TextView
-        android:id="@+id/txt_location_type"
+        android:id="@+id/item_txt_location_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_location_type"
+        android:id="@+id/item_tv_location_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -29,10 +29,10 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_location_type" />
+        app:layout_constraintTop_toBottomOf="@+id/item_txt_location_type" />
 
     <TextView
-        android:id="@+id/txt_location_name"
+        android:id="@+id/item_txt_location_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -42,10 +42,10 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_location_type" />
+        app:layout_constraintTop_toBottomOf="@+id/item_tv_location_type" />
 
     <TextView
-        android:id="@+id/tv_location_name"
+        android:id="@+id/item_tv_location_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -54,10 +54,10 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_location_name" />
+        app:layout_constraintTop_toBottomOf="@+id/item_txt_location_name" />
 
     <TextView
-        android:id="@+id/txt_location_created"
+        android:id="@+id/item_txt_location_created"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -67,10 +67,10 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_location_name" />
+        app:layout_constraintTop_toBottomOf="@+id/item_tv_location_name" />
 
     <TextView
-        android:id="@+id/tv_location_created"
+        android:id="@+id/item_tv_location_created"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -79,10 +79,10 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_location_created" />
+        app:layout_constraintTop_toBottomOf="@+id/item_txt_location_created" />
 
     <TextView
-        android:id="@+id/txt_location_dimension"
+        android:id="@+id/item_txt_location_dimension"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -92,10 +92,10 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_location_created" />
+        app:layout_constraintTop_toBottomOf="@+id/item_tv_location_created" />
 
     <TextView
-        android:id="@+id/tv_location_dimension"
+        android:id="@+id/item_tv_location_dimension"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -106,6 +106,6 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_location_dimension" />
+        app:layout_constraintTop_toBottomOf="@+id/item_txt_location_dimension" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,7 +18,7 @@
             android:background="@drawable/rounder">
 
             <ImageView
-                android:id="@+id/img_character_person"
+                android:id="@+id/item_img_character_person"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:src="@drawable/ic_launcher_background"
@@ -28,7 +28,7 @@
                 tools:ignore="ContentDescription" />
 
             <TextView
-                android:id="@+id/txt_character_name"
+                android:id="@+id/item_txt_character_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -36,11 +36,11 @@
                 android:textColor="#989898"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintLeft_toRightOf="@+id/img_character_person"
+                app:layout_constraintLeft_toRightOf="@+id/item_img_character_person"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tv_character_name"
+                android:id="@+id/item_tv_character_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -48,11 +48,11 @@
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/img_character_person"
-                app:layout_constraintTop_toBottomOf="@+id/txt_character_name" />
+                app:layout_constraintStart_toEndOf="@id/item_img_character_person"
+                app:layout_constraintTop_toBottomOf="@+id/item_txt_character_name" />
 
             <TextView
-                android:id="@+id/txt_character_status"
+                android:id="@+id/item_txt_character_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -60,11 +60,11 @@
                 android:textColor="#989898"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintLeft_toRightOf="@+id/img_character_person"
-                app:layout_constraintTop_toBottomOf="@+id/tv_character_name" />
+                app:layout_constraintLeft_toRightOf="@+id/item_img_character_person"
+                app:layout_constraintTop_toBottomOf="@+id/item_tv_character_name" />
 
             <TextView
-                android:id="@+id/tv_character_status"
+                android:id="@+id/item_tv_character_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -72,11 +72,11 @@
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintLeft_toRightOf="@+id/img_character_person"
-                app:layout_constraintTop_toBottomOf="@+id/txt_character_status" />
+                app:layout_constraintLeft_toRightOf="@+id/item_img_character_person"
+                app:layout_constraintTop_toBottomOf="@+id/item_txt_character_status" />
 
             <TextView
-                android:id="@+id/txt_character_gender"
+                android:id="@+id/item_txt_character_gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -84,11 +84,11 @@
                 android:textColor="#989898"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintLeft_toRightOf="@+id/img_character_person"
-                app:layout_constraintTop_toBottomOf="@+id/tv_character_status" />
+                app:layout_constraintLeft_toRightOf="@+id/item_img_character_person"
+                app:layout_constraintTop_toBottomOf="@+id/item_tv_character_status" />
 
             <TextView
-                android:id="@+id/tv_character_gender"
+                android:id="@+id/item_tv_character_gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -97,8 +97,8 @@
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintLeft_toRightOf="@+id/img_character_person"
-                app:layout_constraintTop_toBottomOf="@+id/txt_character_gender" />
+                app:layout_constraintLeft_toRightOf="@+id/item_img_character_person"
+                app:layout_constraintTop_toBottomOf="@+id/item_txt_character_gender" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

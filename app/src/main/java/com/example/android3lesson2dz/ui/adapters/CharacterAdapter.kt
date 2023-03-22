@@ -1,44 +1,31 @@
 package com.example.android3lesson2dz.ui.adapters
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.android3lesson2dz.databinding.ItemCharacterBinding
+import com.example.android3lesson2dz.exeption.setImage
 import com.example.android3lesson2dz.models.CharacterModel
 
 class CharacterAdapter(val onItemClick: (id: Int) -> Unit) :
-    RecyclerView.Adapter<CharacterAdapter.CharacterViewHolder>() {
+    PagingDataAdapter<CharacterModel, CharacterAdapter.CharacterViewHolder>(diffUtil) {
 
-    private var list: List<CharacterModel> = ArrayList()
-
-    @SuppressLint("NotifyDataSetChanged")
-    fun setList(list: List<CharacterModel>) {
-        this.list = list
-        notifyDataSetChanged()
-    }
-
-    inner class CharacterViewHolder(
-        private val binding: ItemCharacterBinding,
-    ) : RecyclerView.ViewHolder(binding.root) {
+    inner class CharacterViewHolder(private val binding: ItemCharacterBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         init {
             itemView.setOnClickListener {
-                onItemClick(list[adapterPosition].id)
+                getItem(absoluteAdapterPosition)?.let { character -> onItemClick(character.id) }
             }
         }
 
-        fun onBind(characterModel: CharacterModel) {
-            binding.tvCharacterName.text = characterModel.name
-            binding.tvCharacterGender.text = characterModel.gender
-            binding.tvCharacterStatus.text = characterModel.status
-
-            val logoPath = characterModel.image
-            Glide
-                .with(binding.imgCharacterPerson.context)
-                .load(logoPath)
-                .into(binding.imgCharacterPerson)
+        fun onBind(item: CharacterModel?) {
+            binding.itemTvCharacterGender.text = item?.gender
+            binding.itemTvCharacterStatus.text = item?.status
+            binding.itemTvCharacterName.text = item?.name
+            binding.itemImgCharacterPerson.setImage(item!!.image)
         }
     }
 
@@ -47,14 +34,31 @@ class CharacterAdapter(val onItemClick: (id: Int) -> Unit) :
             ItemCharacterBinding.inflate(
                 LayoutInflater.from(
                     parent.context
-                ), parent, false
+                ), parent,
+                false
             )
         )
     }
 
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
-        holder.onBind(list[position])
+        holder.onBind(getItem(position))
     }
 
-    override fun getItemCount(): Int = list.size
+    companion object {
+        private val diffUtil = object : DiffUtil.ItemCallback<CharacterModel>() {
+            override fun areItemsTheSame(
+                oldItem: CharacterModel,
+                newItem: CharacterModel
+            ): Boolean {
+                return oldItem == newItem
+            }
+
+            override fun areContentsTheSame(
+                oldItem: CharacterModel,
+                newItem: CharacterModel
+            ): Boolean {
+                return oldItem.id == newItem.id
+            }
+        }
+    }
 }

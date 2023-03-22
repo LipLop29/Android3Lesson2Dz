@@ -33,5 +33,4 @@
         app:layout_constraintRight_toRightOf="@+id/tv_episode_detail_name"
         app:layout_constraintTop_toBottomOf="@+id/tv_episode_detail_name" />
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package com.example.android3lesson2dz.ui.fragments.episode
 
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -9,6 +10,7 @@ import com.example.android3lesson2dz.R
 import com.example.android3lesson2dz.base.BaseFragment
 import com.example.android3lesson2dz.databinding.FragmentEpisodeBinding
 import com.example.android3lesson2dz.ui.adapters.EpisodeAdapter
+import kotlinx.coroutines.launch
 
 class EpisodeFragment :
     BaseFragment<FragmentEpisodeBinding, EpisodeViewModel>(R.layout.fragment_episode) {
@@ -25,8 +27,10 @@ class EpisodeFragment :
     }
 
     override fun setupObserve() {
-        viewModel.fetchEpisode().observe(viewLifecycleOwner) {
-            episodeAdapter.setList(it.results)
+        lifecycleScope.launch {
+            viewModel.fetchEpisode().collect {
+                episodeAdapter.submitData(it)
+            }
         }
     }
 
